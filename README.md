@@ -1,6 +1,7 @@
 ### Hyper-RP-Tools
 
 С помощью данного мода вы с легкостью подберете анимации/одежду.
+
 В этом моде были использованы:
 AnimPlayer - https://github.com/TurEduard/rage.mp-animplayer <- вся документация по анимациям есть там
 ClothesMenu - https://rage.mp/files/file/95-character-previewer/
