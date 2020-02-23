@@ -26,6 +26,7 @@ ClothesMenu - https://rage.mp/files/file/95-character-previewer/
 ### Команды на сервере
 
 [] - параметр
+
 /startcharprev - запустить выбор одежды.
 
 /veh [vehName] - создать автомобиль.
