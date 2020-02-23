@@ -1,0 +1,7 @@
+{
+	"scripts": {
+		"install-packages": "cd app/server && npm i && cd ../client && npm i && cd ..",
+		"build": "cd app/server && npm run build && cd ../client && npm run build && cd ..",
+		"server": "npm run build && server.exe"
+	}
+}

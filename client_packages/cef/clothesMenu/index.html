@@ -1,0 +1,83 @@
+﻿<html>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="style.css">
+	<script src="./vue.js"></script>
+	<body>
+		<div class="menu" id="app">
+			<div class="b3-close" id="close-button" @click="exit">X</div>
+			<div class="title">
+				Character previewer
+			</div>
+			<div>
+				setProp(<input class="input" type="number" v-model.number="prop[0]" @input="setProp">, <input class="input" type="number" v-model.number="prop[1]" @input="setProp">, <input class="input" type="number" v-model.number="prop[2]" @input="setProp">);
+			</div>
+			<br><br><br>
+			<div>
+				setClothes(<input class="input" type="number" v-model.number="c1[0]" @input="setClothes(1)">, <input class="input" type="number" v-model.number="c1[1]" @input="setClothes(1)">, <input class="input" type="number" v-model.number="c1[2]" @input="setClothes(1)">, <input class="input" type="number" v-model.number="c1[3]" @input="setClothes(1)">);
+			</div>
+
+		
+			<div>
+				setClothes(<input class="input" type="number" v-model.number="c2[0]" @input="setClothes(2)">, <input class="input" type="number" v-model.number="c2[1]" @input="setClothes(2)">, <input class="input" type="number" v-model.number="c2[2]" @input="setClothes(2)">, <input class="input" type="number" v-model.number="c2[3]" @input="setClothes(2)">);
+			</div>
+		
+			<div>
+				setClothes(<input class="input" type="number" v-model.number="c3[0]" @input="setClothes(3)">, <input class="input" type="number" v-model.number="c3[1]" @input="setClothes(3)">, <input class="input" type="number" v-model.number="c3[2]" @input="setClothes(3)">, <input class="input" type="number" v-model.number="c3[3]" @input="setClothes(3)">);
+			</div>
+		
+			<br><br><br>
+			<div>
+				setHeadOverlay(<input class="input" type="number" v-model.number="head[0]" @input="setHead">, [<input class="input" type="number" v-model.number="head[1]" @input="setHead">, <input class="input" type="number" v-model.number="head[2]" @input="setHead">, <input class="input" type="number" v-model.number="head[3]" @input="setHead">, <input class="input" type="number" v-model.number="head[4]" @input="setHead">]);
+			</div>
+			<br><br><br>
+			<div class="rotation">
+				<input type="range" min="-180" max="360" step="1" v-model.number="camRotation" @input="changeCamRotation">
+			</div>
+		</div>
+		
+	</body>
+</html>
+
+
+<script>
+const app = new Vue({
+	el: '#app',
+	data: {
+		prop: [0, 0, 0],
+		c1: [0, 0, 0, 0],
+		c2: [0, 0, 0, 0],
+		c3: [0, 0, 0, 0],
+		head: [0, 0, 0, 0, 0],
+		camRotation: 0,
+	},
+
+	methods: {
+		setProp: function() {
+			mp.trigger("cCharPrev-setProp", JSON.stringify(this.prop));
+		},
+		
+		setClothes: function(num) {
+			let arr;
+			if (num === 1) arr = this.c1;
+			else if (num === 2) arr = this.c2;
+			else if (num === 3) arr = this.c3;
+			mp.trigger("cCharPrev-setClothes", JSON.stringify(arr));
+		},
+		
+		setHead: function() {
+			mp.trigger("cCharPrev-setHeadOverlay", JSON.stringify(this.head));
+		},
+
+		changeCamRotation: function() {
+			mp.trigger("cCharPrev-changeRotation", this.camRotation); 
+		},
+	
+			
+		exit: function() {
+			mp.trigger("cCharPrev-Close");
+		},
+	},
+			
+});
+
+</script>

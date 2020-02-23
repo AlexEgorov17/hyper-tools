@@ -1,0 +1,83 @@
+﻿html {
+  height: 100%;
+  font-family: Segoe UI;
+  font-weight: 100;
+  color: #DDD;
+  text-align: center;
+  font-size: 1vw;
+}
+
+.menu {
+  position: fixed;
+  right: 0;
+  top: 0;
+  height: 100vh;
+  width: 30vw;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.title {
+padding: 1vh 0;
+font-size: 1.5vw;
+}
+
+.input {
+  width: 8%;
+	height: 5vh;
+  background: transparent;
+  border: 1px solid #ddd;
+  color: #ddd;
+  font-size: 1.8vh;
+}
+
+input::-webkit-inner-spin-button { height: 5vh;}
+
+.button {
+width: 20%;
+margin-top: 3%;
+margin-bottom: 15%;
+}
+
+.b3-close {
+   background: coral;
+   position: fixed;
+   right: 0;
+   top: 0;
+   width: 6vh;
+   height: 3vh;
+   font-size: 2vh;
+   transition: 0.3s;
+   z-index: 3;
+}
+
+.b3-close:hover {
+   background: tomato;
+}
+
+.rotation {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 70vw;
+  z-index: 1;
+}
+
+.rotation input:focus {
+  outline: none;
+}
+
+.rotation input[type=range] {
+  -webkit-appearance: none;
+  width: 70vw;
+  background: transparent;
+}
+
+.rotation input[type=range]::-webkit-slider-runnable-track {
+  height: 100vh;
+}
+
+.rotation input[type=range]::-webkit-slider-thumb {
+  height: 100vh;
+  width: 10vw;
+  -webkit-appearance: none;
+}
