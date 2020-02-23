@@ -21,4 +21,5 @@ ClothesMenu - https://rage.mp/files/file/95-character-previewer/
 
 
 кнопка ~/ё - запустить выбор анимаций
+
 команда /startcharprev - запустить выбор одежды
